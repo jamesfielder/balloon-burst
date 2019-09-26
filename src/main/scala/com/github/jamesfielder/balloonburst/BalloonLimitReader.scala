@@ -1,11 +1,11 @@
-package com.github.jamesfielder.balloonburst.Console
+package com.github.jamesfielder.balloonburst
 
-import com.github.jamesfielder.balloonburst.ExceptionFunctions.exitWithMessage
+import com.github.jamesfielder.balloonburst.ProgramFunctions.exitWithMessage
 
 import scala.io.StdIn.readLine
 import scala.util.Try
 
-object BalloonReader {
+object BalloonLimitReader {
   def getBalloonLimits: Seq[Int] = {
     val balloonsTry: Try[Seq[Int]] = for {
       line <- Try(readLine())

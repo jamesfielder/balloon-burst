@@ -1,6 +1,6 @@
 package com.github.jamesfielder.balloonburst
 
-object ExceptionFunctions {
+object ProgramFunctions {
   def exitWithMessage(message: String, e: Option[Throwable]): Unit = {
     println(message)
     e.foreach(ex => println("Exception is:" + ex.toString))
