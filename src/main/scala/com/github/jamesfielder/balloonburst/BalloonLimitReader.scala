@@ -5,7 +5,7 @@ import com.github.jamesfielder.balloonburst.ProgramFunctions.exitWithMessage
 import scala.io.StdIn.readLine
 import scala.util.Try
 
-object BalloonLimitReader {
+trait BalloonLimitReader {
   def getBalloonLimits: Seq[Int] = {
     val balloonsTry: Try[Seq[Int]] = for {
       line <- Try(readLine())

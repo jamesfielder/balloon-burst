@@ -1,13 +1,12 @@
 package com.github.jamesfielder.balloonburst
 
-import BalloonLimitReader.getBalloonLimits
 import com.github.jamesfielder.balloonburst.ProgramFunctions.exitWithMessage
 
 import scala.annotation.tailrec
 import scala.io.StdIn.readLine
 import scala.util.{Failure, Success, Try}
 
-case class GameImpl {
+case class GameImpl() extends BalloonLimitReader {
 
   type Burst = String
   type Game = Either[Burst, Int]
