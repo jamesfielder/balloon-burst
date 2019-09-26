@@ -34,8 +34,8 @@ case class GameImpl() extends BalloonLimitReader with ProgramFunctions {
       case (Success("INFLATE"), limit) if limit == 0 =>
         println("BURST")
         Left("BURST")
-      case (Success(_), _) =>
-        println("Sorry I don't know what that means, please try again")
+      case (Success(msg), _) =>
+        println("Sorry I don't know what " + msg + " means, please try again")
         playGame(limit, game)
       case (Failure(ex), _) =>
         exitWithMessage("Failure to get input, exiting", Some(ex))

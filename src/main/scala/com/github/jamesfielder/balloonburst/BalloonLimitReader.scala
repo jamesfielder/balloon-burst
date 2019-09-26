@@ -7,7 +7,7 @@ trait BalloonLimitReader extends ProgramFunctions {
   def getBalloonLimits: Seq[Int] = {
     val balloonsTry: Try[Seq[Int]] = for {
       line <- Try(readLine())
-      split <- Try(line.split(" ")).filter(_.length > 0)
+      split <- Try(line.split(" ")).filter(l => l.length > 0 && l.nonEmpty)
       splitSeq <- Try(split.toSeq)
       nums <- Try(splitSeq.map(_.toInt)).filter(_.forall(_ > 0))
     } yield nums
@@ -19,6 +19,6 @@ trait BalloonLimitReader extends ProgramFunctions {
     }
 
     // Since we've used recover above we can now safely call .get on the Try
-    balloonsTry.get
+    balloonsTry.getOrElse(Seq())
   }
 }
